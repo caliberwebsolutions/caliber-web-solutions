@@ -37,7 +37,7 @@
     @keyframes float3 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(20px,-30px)} }
 
     nav { position: fixed; top: 1.5rem; left: 50%; transform: translateX(-50%); z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.5rem; width: min(900px, calc(100% - 3rem)); border-radius: 16px; background: rgba(255,255,255,0.75); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.9); box-shadow: 0 4px 24px rgba(37,99,235,0.1); }
-    .nav-logo { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.05rem; color: var(--text); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-logo { text-decoration: none; display: flex; align-items: center; }
     .nav-logo span { color: var(--blue); }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a { font-size: 0.85rem; color: var(--text-mid); text-decoration: none; font-weight: 500; transition: color 0.2s; }
@@ -154,7 +154,9 @@
   </div>
 
   <nav>
-    <a href="#home" class="nav-logo">Caliber <span>Web</span> Solutions</a>
+    <a href="#home" class="nav-logo">
+  <img src="caliber-logo-light.svg" alt="Caliber Web Solutions" style="height:38px; width:auto;"/>
+</a>
     <ul class="nav-links">
       <li><a href="#home">Home</a></li>
       <li><a href="#services">Services</a></li>
