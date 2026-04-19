@@ -186,7 +186,9 @@
       <div class="progress-step" id="step-4"></div>
     </div>
  
-    <form id="intakeForm">
+    <form id="intakeForm" action="https://formspree.io/f/mpqklwkj" method="POST">
+      <input type="hidden" name="_next" value="https://caliberwebco.com/intake-form?submitted=true"/>
+      <input type="hidden" name="_subject" value="New Project Inquiry — Caliber Web Solutions"/>
  
       <!-- Section 1: Contact Info -->
       <div class="form-section active" data-step="1">
@@ -440,6 +442,13 @@
     let currentStep = 1;
     const totalSteps = 4;
  
+    // Show success if redirected back after Formspree submission
+    if (window.location.search.includes('submitted=true')) {
+      document.getElementById('intakeForm').style.display = 'none';
+      document.querySelector('.progress-bar').style.display = 'none';
+      document.getElementById('success').classList.add('active');
+    }
+ 
     function updateProgress(step) {
       for (let i = 1; i <= totalSteps; i++) {
         const el = document.getElementById('step-' + i);
@@ -478,41 +487,7 @@
       const btn = document.querySelector('[data-step="4"] .btn-next');
       btn.textContent = 'Sending...';
       btn.disabled = true;
- 
-      const data = new FormData();
-      const inputs = form.querySelectorAll('input, select, textarea');
-      inputs.forEach(input => {
-        if (input.type === 'checkbox' && input.checked) {
-          data.append(input.name, input.value);
-        } else if (input.type === 'radio' && input.checked) {
-          data.append(input.name, input.value);
-        } else if (input.type !== 'checkbox' && input.type !== 'radio') {
-          data.append(input.name, input.value);
-        }
-      });
- 
-      try {
-        const response = await fetch('https://formspree.io/f/mpqklwkj', {
-          method: 'POST',
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        });
- 
-        if (response.ok) {
-          form.style.display = 'none';
-          document.querySelector('.progress-bar').style.display = 'none';
-          document.getElementById('success').classList.add('active');
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        } else {
-          btn.textContent = 'Submit Inquiry →';
-          btn.disabled = false;
-          alert('Something went wrong. Please try again or email us directly at info@caliberwebco.com');
-        }
-      } catch (error) {
-        btn.textContent = 'Submit Inquiry →';
-        btn.disabled = false;
-        alert('Something went wrong. Please try again or email us directly at info@caliberwebco.com');
-      }
+      form.submit();
     }
   </script>
 </body>
