@@ -21,7 +21,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: 'Outfit', sans-serif; min-height: 100vh; padding: 3rem 1.5rem; }
-
+ 
     /* Grid bg */
     body::before {
       content: '';
@@ -32,9 +32,9 @@
       pointer-events: none;
       z-index: 0;
     }
-
+ 
     .container { max-width: 720px; margin: 0 auto; position: relative; z-index: 1; }
-
+ 
     /* Header */
     .header { text-align: center; margin-bottom: 3rem; }
     .logo-mark { display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
@@ -44,30 +44,30 @@
     .header-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
     .header h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 0.75rem; }
     .header p { color: var(--text-mid); font-size: 0.95rem; line-height: 1.7; font-weight: 300; max-width: 480px; margin: 0 auto; }
-
+ 
     /* Progress */
     .progress-bar { display: flex; gap: 0.5rem; margin-bottom: 2.5rem; }
     .progress-step { flex: 1; height: 3px; background: var(--bg3); border-radius: 2px; transition: background 0.3s; }
     .progress-step.active { background: var(--gold); }
     .progress-step.done { background: rgba(245,158,11,0.4); }
-
+ 
     /* Form sections */
     .form-section { display: none; animation: fadeIn 0.4s ease; }
     .form-section.active { display: block; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
-
+ 
     .section-title { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
     .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border-gold); opacity: 0.5; }
-
+ 
     .form-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; margin-bottom: 1rem; }
-
+ 
     .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
     .form-grid.single { grid-template-columns: 1fr; }
-
+ 
     .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
     .form-group label { font-size: 0.78rem; font-weight: 600; color: var(--text-mid); letter-spacing: 0.03em; }
     .form-group .required { color: var(--gold); margin-left: 2px; }
-
+ 
     .form-group input,
     .form-group select,
     .form-group textarea {
@@ -82,21 +82,21 @@
       transition: all 0.2s;
       width: 100%;
     }
-
+ 
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus {
       border-color: var(--gold);
       box-shadow: 0 0 0 3px rgba(245,158,11,0.08);
     }
-
+ 
     .form-group select option { background: var(--bg3); }
     .form-group textarea { resize: vertical; min-height: 100px; }
-
+ 
     /* Radio/checkbox groups */
     .option-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
     .option-grid.three { grid-template-columns: 1fr 1fr 1fr; }
-
+ 
     .option-item { position: relative; }
     .option-item input { position: absolute; opacity: 0; width: 0; height: 0; }
     .option-item label {
@@ -133,7 +133,7 @@
       box-shadow: 0 0 0 3px rgba(245,158,11,0.15);
     }
     .option-item.checkbox label::before { border-radius: 4px; }
-
+ 
     /* Navigation buttons */
     .form-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; }
     .btn-back { font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 500; color: var(--text-mid); background: none; border: 1px solid var(--border); padding: 0.75rem 1.5rem; border-radius: 10px; cursor: pointer; transition: all 0.2s; }
@@ -141,14 +141,14 @@
     .btn-next { font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 700; color: #0a0a0f; background: var(--gold); border: none; padding: 0.75rem 2rem; border-radius: 10px; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 16px rgba(245,158,11,0.25); }
     .btn-next:hover { background: #fbbf24; transform: translateY(-1px); }
     .step-counter { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--text-light); }
-
+ 
     /* Success */
     .success { display: none; text-align: center; padding: 4rem 2rem; }
     .success.active { display: block; animation: fadeIn 0.5s ease; }
     .success-icon { width: 64px; height: 64px; background: var(--gold-dim); border: 1px solid var(--border-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 1.5rem; }
     .success h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 0.75rem; }
     .success p { color: var(--text-mid); font-size: 0.95rem; line-height: 1.7; max-width: 400px; margin: 0 auto; }
-
+ 
     @media (max-width: 600px) {
       .form-grid { grid-template-columns: 1fr; }
       .option-grid { grid-template-columns: 1fr; }
@@ -158,7 +158,7 @@
 </head>
 <body>
   <div class="container">
-
+ 
     <!-- Header -->
     <div class="header">
       <div class="logo-mark">
@@ -177,7 +177,7 @@
       <h1>Let's Build Something Great</h1>
       <p>Fill out this form and we'll get back to you within 24 hours with a custom quote and timeline.</p>
     </div>
-
+ 
     <!-- Progress -->
     <div class="progress-bar">
       <div class="progress-step active" id="step-1"></div>
@@ -185,9 +185,9 @@
       <div class="progress-step" id="step-3"></div>
       <div class="progress-step" id="step-4"></div>
     </div>
-
+ 
     <form id="intakeForm">
-
+ 
       <!-- Section 1: Contact Info -->
       <div class="form-section active" data-step="1">
         <div class="section-title">Contact Information</div>
@@ -224,7 +224,7 @@
           <button type="button" class="btn-next" onclick="nextStep(1)">Next →</button>
         </div>
       </div>
-
+ 
       <!-- Section 2: Project Details -->
       <div class="form-section" data-step="2">
         <div class="section-title">Project Details</div>
@@ -233,16 +233,16 @@
             <label>What type of site do you need? <span class="required">*</span></label>
             <div class="option-grid" style="margin-top:0.5rem;">
               <div class="option-item">
-                <input type="radio" name="siteType" id="starter" value="Starter Site ($350+)" required/>
-                <label for="starter">Starter Site ($350+)</label>
+                <input type="radio" name="siteType" id="starter" value="Starter Site (Starting at $350)" required/>
+                <label for="starter">Starter Site (Starting at $350)</label>
               </div>
               <div class="option-item">
-                <input type="radio" name="siteType" id="standard" value="Standard Site ($750-$1,200)"/>
-                <label for="standard">Standard Site ($750–$1,200)</label>
+                <input type="radio" name="siteType" id="standard" value="Standard Site (Starting at $800)"/>
+                <label for="standard">Standard Site (Starting at $800)</label>
               </div>
               <div class="option-item">
-                <input type="radio" name="siteType" id="premium" value="Premium Build ($1,500+)"/>
-                <label for="premium">Premium Build ($1,500+)</label>
+                <input type="radio" name="siteType" id="premium" value="Premium Build (Starting at $1,500)"/>
+                <label for="premium">Premium Build (Starting at $1,500)</label>
               </div>
               <div class="option-item">
                 <input type="radio" name="siteType" id="unsure" value="Not Sure"/>
@@ -308,7 +308,7 @@
           <button type="button" class="btn-next" onclick="nextStep(2)">Next →</button>
         </div>
       </div>
-
+ 
       <!-- Section 3: Design Preferences -->
       <div class="form-section" data-step="3">
         <div class="section-title">Design Preferences</div>
@@ -365,7 +365,7 @@
           <button type="button" class="btn-next" onclick="nextStep(3)">Next →</button>
         </div>
       </div>
-
+ 
       <!-- Section 4: Timeline & Budget -->
       <div class="form-section" data-step="4">
         <div class="section-title">Timeline & Budget</div>
@@ -423,9 +423,9 @@
           <button type="button" class="btn-next" onclick="submitForm()">Submit Inquiry →</button>
         </div>
       </div>
-
+ 
     </form>
-
+ 
     <!-- Success -->
     <div class="success" id="success">
       <div class="success-icon">✓</div>
@@ -433,13 +433,13 @@
       <p>Thanks for reaching out. We'll review your project details and get back to you within 24 hours with a custom quote and next steps.</p>
       <p style="margin-top:1rem; font-size:0.85rem; color:var(--text-light);">Questions in the meantime? Email us at info@caliberwebco.com</p>
     </div>
-
+ 
   </div>
-
+ 
   <script>
     let currentStep = 1;
     const totalSteps = 4;
-
+ 
     function updateProgress(step) {
       for (let i = 1; i <= totalSteps; i++) {
         const el = document.getElementById('step-' + i);
@@ -448,7 +448,7 @@
         else { el.className = 'progress-step'; }
       }
     }
-
+ 
     function nextStep(step) {
       const section = document.querySelector('[data-step="' + step + '"]');
       const required = section.querySelectorAll('[required]');
@@ -464,7 +464,7 @@
       updateProgress(currentStep);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-
+ 
     function prevStep(step) {
       document.querySelector('[data-step="' + step + '"]').classList.remove('active');
       document.querySelector('[data-step="' + (step - 1) + '"]').classList.add('active');
@@ -472,13 +472,49 @@
       updateProgress(currentStep);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-
-    function submitForm() {
-      document.getElementById('intakeForm').style.display = 'none';
-      document.querySelector('.progress-bar').style.display = 'none';
-      document.getElementById('success').classList.add('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+ 
+    async function submitForm() {
+      const form = document.getElementById('intakeForm');
+      const btn = document.querySelector('[data-step="4"] .btn-next');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+ 
+      const data = new FormData();
+      const inputs = form.querySelectorAll('input, select, textarea');
+      inputs.forEach(input => {
+        if (input.type === 'checkbox' && input.checked) {
+          data.append(input.name, input.value);
+        } else if (input.type === 'radio' && input.checked) {
+          data.append(input.name, input.value);
+        } else if (input.type !== 'checkbox' && input.type !== 'radio') {
+          data.append(input.name, input.value);
+        }
+      });
+ 
+      try {
+        const response = await fetch('https://formspree.io/f/mpqklwkj', {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+ 
+        if (response.ok) {
+          form.style.display = 'none';
+          document.querySelector('.progress-bar').style.display = 'none';
+          document.getElementById('success').classList.add('active');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          btn.textContent = 'Submit Inquiry →';
+          btn.disabled = false;
+          alert('Something went wrong. Please try again or email us directly at info@caliberwebco.com');
+        }
+      } catch (error) {
+        btn.textContent = 'Submit Inquiry →';
+        btn.disabled = false;
+        alert('Something went wrong. Please try again or email us directly at info@caliberwebco.com');
+      }
     }
   </script>
 </body>
 </html>
+ 
